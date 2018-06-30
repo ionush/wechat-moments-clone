@@ -1,3 +1,17 @@
+interface BasePost {
+  avatar: string;
+  user: string;
+  date: Date;
+}
+
+interface PhotoPost extends BasePost {
+  photos: string[];
+}
+
+interface LinkPost extends BasePost {
+  link: { image: string; description: string };
+}
+
 export default [
   {
     avatar: 'https://placeimg.com/140/140/any',
