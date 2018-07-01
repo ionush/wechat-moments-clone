@@ -1,0 +1,41 @@
+.contentWrapper {
+  display: flex;
+}
+
+.avatar img {
+  padding: 0.6em;
+  width: 10vw;
+}
+
+.hairSpacer {
+  display: block;
+  width: 100%;
+  height: 0.05em;
+  background-color: rgba(212, 212, 212, 0.54);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.wrapper {
+  padding-top: 10px;
+  flex: 1;
+}
+
+.username {
+  color: rgb(137, 148, 198);
+}
+
+.dateCommentsWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.commentsButton {
+  height: 1.5vh;
+  width: 4vw;
+  background-color: rgb(137, 148, 198);
+  margin: 1vw;
+  margin-right: 3vw;
+}

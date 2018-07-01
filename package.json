@@ -51,6 +51,8 @@
     "webpack-hot-middleware": "^2.0.0"
   },
   "dependencies": {
+    "@types/react": "^16.4.6",
+    "moment": "^2.22.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-hot-loader": "^4.3.3",

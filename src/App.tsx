@@ -4,11 +4,12 @@ import data from './data.ts';
 const styles = require('./App.css');
 import clouds from './assets/clouds.jpeg';
 import { hot } from 'react-hot-loader';
+import Post from './Post.tsx';
 
 class App extends React.Component<{}, {}> {
   render() {
     return (
-      <div>
+      <div className="app">
         <header className="header" />
         <nav>
           <ul className="navbar">
@@ -30,6 +31,9 @@ class App extends React.Component<{}, {}> {
           </div>
         </div>
         {/* <h1>wechat moments clone</h1> */}
+        {data.map((item, i) => {
+          return <Post post={item} />;
+        })}
       </div>
     );
   }
