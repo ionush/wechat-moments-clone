@@ -24,9 +24,13 @@ export interface Props {
 }
 
 class Post extends React.Component<Props, State> {
-  state: State = {
-    visible: false
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      visible: false
+    };
+  }
 
   render() {
     const {

@@ -47,7 +47,8 @@ class App extends React.Component<{}, {}> {
         <nav style={{ opacity: navOpacity }}>
           <ul className="navbar">
             <li className="item item-1">
-              {/* <IoChevronLeft color="black" /> */}
+              back
+              <IoChevronLeft color="black" />
             </li>
             <li className="item item-2">take picture</li>
           </ul>
