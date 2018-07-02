@@ -28,12 +28,14 @@ nav {
   padding: 10px;
 }
 
-.usernameAndAvatar {
-  display: flex;
+.userProfile {
   position: relative;
-  float: right;
-  /* align-items: center; */
-  top: -8vh;
+}
+.usernameAndAvatar {
+  position: absolute;
+  display: flex;
+  top: 27vh;
+  right: 0vw;
 }
 
 .avatarPic img {

@@ -2,18 +2,18 @@ import * as React from 'react';
 const styles = require('./Photos.css');
 
 export interface Props {
-  photos: any;
+  photos: Array<string>;
 }
 
-const Photos = ({ photos }: Props) => {
-  if (photos.length === 1) {
-    photos.map(item => <img src={item} className="onePhoto" />);
-  } else if (photos.length > 4) {
-    photos.map(item => <img src={item} className="threePhoto" />);
-  } else if (photos.length === 4) {
-    photos.map(item => <img src={item} className="fourPhoto" />);
+const Photos = (props: Props) => {
+  if (props.photos.length === 1) {
+    props.photos.map(item => <img src={item} className="onePhoto" />);
+  } else if (props.photos.length > 4) {
+    props.photos.map(item => <img src={item} className="threePhoto" />);
+  } else if (props.photos.length === 4) {
+    props.photos.map(item => <img src={item} className="fourPhoto" />);
   } else {
-    photos.map(item => <img src={item} className="ninePhoto" />);
+    props.photos.map(item => <img src={item} className="ninePhoto" />);
   }
 };
 

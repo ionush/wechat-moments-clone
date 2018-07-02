@@ -2,31 +2,32 @@ import * as React from 'react';
 const styles = require('./Post.css');
 import Photos from './Photos.tsx';
 import * as moment from 'moment';
+import { CSSTransitionGroup } from 'react-transition-group';
 
 interface BasePost {
   avatar: string;
   user: string;
   description?: string;
-  photos?: string[];
+  photos?: Array<string>;
   link?: { image: string; description: string };
   location?: string;
   date?: Date;
-  comments?: { likes: string[] };
+  comments?: { likes: Array<string> };
 }
 
-interface PhotoPost extends BasePost {
-  photos: string[];
-}
-
-interface LinkPost extends BasePost {
-  link: { image: string; description: string };
+interface State {
+  visible: boolean;
 }
 
 export interface Props {
   post: BasePost;
 }
 
-class Post extends React.Component<Props, object> {
+class Post extends React.Component<Props, State> {
+  state: State = {
+    visible: false
+  };
+
   render() {
     const {
       avatar,
@@ -52,7 +53,7 @@ class Post extends React.Component<Props, object> {
             ) : null}
             {photos.length > 0 ? (
               <div className="photos">
-                {/* <Photos photos={this.props} /> */}
+                <Photos photos={photos} />
               </div>
             ) : null}
             {link.image ? (
@@ -64,7 +65,29 @@ class Post extends React.Component<Props, object> {
             {location ? <div className="location">{location}</div> : null}
             <div className="dateCommentsWrapper">
               <div className="date">{moment(date).toNow()}</div>
-              <div className="commentsButton" />
+              <div className="buttonWrapper">
+                {/* <CSSTransitionGroup
+                transitionName="likeSelectorTransition"
+                transitionEnterTimeout={500}
+                transitionLeaveTimeout={300}
+              > */}
+                <div
+                  className={
+                    this.state.visible ? 'likeSelector' : 'likeSelector-hidden'
+                  }
+                  key={user}
+                />
+                {/* </CSSTransitionGroup> */}
+                <div
+                  className="commentsButton"
+                  onClick={(event: any) => {
+                    this.setState({
+                      ...this.state,
+                      visible: !this.state.visible
+                    });
+                  }}
+                />
+              </div>
             </div>
             {comments.likes.length > 0 ? (
               <div className="commentsWrapper">
