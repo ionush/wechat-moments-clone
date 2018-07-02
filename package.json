@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "@types/react": "^16.4.6",
+    "@types/react-icon-base": "^2.1.1",
     "moment": "^2.22.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",

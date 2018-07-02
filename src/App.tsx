@@ -5,7 +5,7 @@ const styles = require('./App.css');
 import clouds from './assets/clouds.jpeg';
 import { hot } from 'react-hot-loader';
 import Post from './Post.tsx';
-import IoChevronLeft from 'react-icons/lib/io/chevron-left';
+import { IoChevronLeft, IoIosCameraOutline } from 'react-icons/lib/io/';
 
 interface State {
   currentScrollHeight: number;
@@ -32,12 +32,13 @@ class App extends React.Component<{}, {}> {
 
   render() {
     const { currentScrollHeight, coverImageHeight } = this.state;
-    const navOpacity = Math.min(100 / (currentScrollHeight * 10), 1);
+    const navOpacity = Math.min(100 / currentScrollHeight, 1);
     const headerOpacity =
       currentScrollHeight > coverImageHeight * 0.7
         ? currentScrollHeight / 1000
         : 0;
     console.log('headerOpacity', headerOpacity);
+    console.log('navOpacity', navOpacity);
 
     return (
       <div className="app">
@@ -47,10 +48,11 @@ class App extends React.Component<{}, {}> {
         <nav style={{ opacity: navOpacity }}>
           <ul className="navbar">
             <li className="item item-1">
-              back
-              <IoChevronLeft color="black" />
+              <IoChevronLeft color="white" size={24} />
             </li>
-            <li className="item item-2">take picture</li>
+            <li className="item item-2">
+              <IoIosCameraOutline color="white" size={30} />
+            </li>
           </ul>
         </nav>
         <div className="userProfile">

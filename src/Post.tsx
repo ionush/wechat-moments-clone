@@ -60,12 +60,12 @@ class Post extends React.Component<Props, State> {
                 <Photos photos={photos} />
               </div>
             ) : null}
-            {link.image ? (
+            {/* {link.image ? (
               <div className="linkWrapper">
                 <div className="linkImage">image</div>
                 <div className="linkDescription">description</div>
               </div>
-            ) : null}
+            ) : null} */}
             {location ? <div className="location">{location}</div> : null}
             <div className="dateCommentsWrapper">
               <div className="date">{moment(date).toNow()}</div>
